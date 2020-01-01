@@ -1,0 +1,80 @@
+.basic-layout {
+  min-height: 100vh;
+
+  .trigger {
+    font-size: 20px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .trigger:hover {
+    color: #1890ff;
+  }
+
+  .nav-header {
+    background: #fff;
+    padding: 0;
+
+    .right-header {
+      margin-left: auto;
+      float: right;
+    }
+  }
+
+  .nav-action {
+    line-height: unset;
+    height: auto;
+    border-radius: 0;
+    border: 0;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.025);
+    }
+  }
+
+  .sider {
+    .menu {
+      padding: 16px 0;
+    }
+  }
+
+  .ant-menu-item {
+    a {
+      color: #fff;
+    }
+  }
+}
+
+.logo-title {
+  position: relative;
+  padding: 0 24px;
+  overflow: hidden;
+  background: #001529;
+  cursor: pointer;
+  transition: all .3s;
+
+  > a {
+    display: flex;
+    align-items: center;
+    height: 64px;
+  }
+
+  img.logo {
+    display: inline-block;
+    height: 32px;
+    vertical-align: middle;
+  }
+
+  h1 {
+    display: inline-block;
+    margin: 0 0 0 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    vertical-align: middle;
+    animation: fade-in;
+    animation-duration: .3s;
+  }
+}
