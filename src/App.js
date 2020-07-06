@@ -1,14 +1,11 @@
 import React from 'react'
 // import logo from './logo.svg';
 import './App.css'
-import {RecoilRoot} from 'recoil'
-import RecoilStateApp from './RecoilStateApp'
+import ZStateApp from "./ZStateApp";
 
 function App() {
 
-  return <RecoilRoot>
-    <RecoilStateApp />
-  </RecoilRoot>
+  return <ZStateApp />
 
 }
 
