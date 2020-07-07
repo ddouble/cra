@@ -5,11 +5,16 @@ import React, {useEffect, useState} from "react";
  */
 export function ImagePicker(props) {
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [images, setImages] = useState([]);
   const limit = 15;
 
   const fetchImages = async ({page, limit}) => {
-    return fetch(`https://picsum.photos/v2/list?page=${page}&limit=${limit}`).then(r => r.json())
+    setLoading(true);
+    return fetch(`https://picsum.photos/v2/list?page=${page}&limit=${limit}`).then(r => {
+      setLoading(false);
+      return r.json();
+    })
   };
 
   useEffect(() => {
@@ -66,9 +71,9 @@ export function ImagePicker(props) {
           textAlign: 'center',
           width: '90%'
         }}>
-          <button style={{width: '50px', fontSize: '16px', margin: '10px'}} onClick={() => setPage(1)}> &lt;&lt; </button>
-          <button style={{width: '100px', fontSize: '16px', margin: '10px'}} onClick={() => setPage(page - 1)}> &lt; </button>
-          <button style={{width: '100px', fontSize: '16px'}} onClick={() => setPage(page + 1)}> &gt; </button>
+          <button disabled={loading} style={{width: '50px', fontSize: '16px', margin: '10px'}} onClick={() => setPage(1)}> &lt;&lt; </button>
+          <button disabled={loading} style={{width: '100px', fontSize: '16px', margin: '10px'}} onClick={() => setPage(page - 1)}> &lt; </button>
+          <button disabled={loading} style={{width: '100px', fontSize: '16px'}} onClick={() => setPage(page + 1)}> &gt; </button>
         </div>
       </div>
     </div>
